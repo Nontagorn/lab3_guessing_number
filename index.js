@@ -1,28 +1,37 @@
-var y = Math.floor(Math.random() * 10 + 1); 
-      
-    // counting the number of guesses 
-    // made for correct Guess 
+    var y = Math.floor(Math.random()*100)+1; 
+       
     var guess = 1; 
-      
+    
+    let guessed;
+
     document.getElementById("submitguess").onclick = function(){ 
-      
-   // number guessed by user      
-   var x = document.getElementById("guessField").value; 
-  
-   if(x == y) 
-   {     
-       alert("CONGRATULATIONS!!! YOU GUESSED IT RIGHT IN "
-               + guess + " GUESS "); 
-   } 
-   else if(x > y) /* if guessed number is greater 
-                   than actual number*/ 
-   {     
-       guess++; 
-       alert("OOPS SORRY!! TRY A SMALLER NUMBER"); 
-   } 
-   else
-   { 
-       guess++; 
-       alert("OOPS SORRY!! TRY A GREATER NUMBER") 
-   } 
-}
+           
+        var x = document.getElementById("guessField").value; 
+ 
+        if(guess<=10){
+                document.querySelector('.history').textContent = guessed;   
+                document.querySelector('.turn').textContent = 11 - guess + " left";
+                if(x == y){     
+                    document.querySelector('.result').textContent = "CONGRATULATIONS!!! YOU GUESSED IT RIGHT IN " + guess + " GUESS "; 
+                    
+                    guess = 12;
+                }else if(x > y){     
+                        guess++;
+                        document.querySelector('.result').textContent = "Too High"; 
+                    }else{ 
+                        guess++; 
+                        document.querySelector('.result').textContent = "Too Low"; 
+                    } 
+                    if(guess == 2){
+                        guessed = x;
+                    }else{
+                        guessed += ", "+x;
+                    }
+                        
+        }
+
+        if(guess == 11){
+                document.querySelector('.result').textContent = "YOU LOSE! THE NUMBER IS " + y + "."; 
+        }
+    
+    }

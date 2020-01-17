@@ -11,12 +11,16 @@
 </head>
 <body>
     <h1>Guess Me</h1>
-    <table align="center"><tr><td><h2>&nbsp;Manual&nbsp; </h2></td><td><div class="manual"> &nbsp; Guessing a Random Number between 1 and 100 in 10 turns or less. We will tell you if your number was too low or too high. &nbsp;</div></td></tr></table>
+    <table ><tr><td><h2>&nbsp;Manual&nbsp; </h2></td><td><div class="manual"> &nbsp; Guessing a Random Number between 1 and 100 in 10 turns or less. We will tell you if your number was too low or too high. &nbsp;</div></td></tr></table>
     <div class="form"> 
         <input type = "text" id = "guessField" class = "guessField" placeholder="Enter a Number (1-100)"> 
-        <input type = "submit" value = "Submit guess" 
-               class = "guessSubmit" id = "submitguess"> 
+        <input type = "submit" value = "Submit guess" class = "guessSubmit" id = "submitguess"> 
     </div>
+    <br>
+    <table align="center"><tr><td><div class="result"></div></td></tr></table>
+    <table><tr><td><h2>&nbsp;History&nbsp;&nbsp;&nbsp;</h2></td><td class="history"></td><td><div class="turn"></div></td></tr></table>
+    <br>
+    <div class="restart"></div>
     <script src="index.js"></script>
 </body>
 </html>
