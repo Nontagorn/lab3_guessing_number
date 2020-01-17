@@ -9,11 +9,10 @@
         var x = document.getElementById("guessField").value; 
  
         if(guess<=10){
-                document.querySelector('.history').textContent = guessed;   
-                document.querySelector('.turn').textContent = 11 - guess + " left";
+                  
+                document.querySelector('.turn').textContent = 10 - guess + " left";
                 if(x == y){     
-                    document.querySelector('.result').textContent = "CONGRATULATIONS!!! YOU GUESSED IT RIGHT IN " + guess + " GUESS "; 
-                    
+                    document.querySelector('.result').textContent = "CONGRATULATIONS!!! YOU GUESSED IT RIGHT IN " + guess + " GUESS ";                   
                     guess = 12;
                 }else if(x > y){     
                         guess++;
@@ -27,6 +26,7 @@
                     }else{
                         guessed += ", "+x;
                     }
+                    document.querySelector('.history').textContent = guessed; 
                         
         }
 
